@@ -1,0 +1,40 @@
+{
+  "name": "swagger-next",
+  "version": "1.0.0",
+  "description": "A boilerplate that mixes Swagger (OpenAPI 3.0) and Next.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lotti/swagger-next.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "build": "next build",
+    "start": "NODE_ENV=production node index.js",
+    "watch": "nodemon -r dotenv/config index.js",
+    "lint": "eslint --fix .",
+    "push": "bx cf push -f manifest.yaml --vars-file manifest-params-yaml"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "ibm-watson": "^5.1.0",
+    "js-yaml": "^3.13.1",
+    "log4js": "^6.1.0",
+    "next": "^9.1.4",
+    "node-jq": "^1.11.0",
+    "oas-tools": "^2.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^6.7.1",
+    "eslint-plugin-jest": "^23.0.5",
+    "eslint-plugin-react": "^7.16.0",
+    "nodemon": "^2.0.1"
+  }
+}

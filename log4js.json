@@ -1,0 +1,38 @@
+{
+  "appenders": {
+    "out": {
+      "type": "console",
+      "layout": {
+        "type": "coloured"
+      }
+    },
+    "file": {
+      "type": "file",
+      "layout": {
+        "type": "basic"
+      },
+      "filename": "logs/stdout.log",
+      "maxLogSize": 2048000,
+      "backups": 5,
+      "compress": true
+    },
+    "multiFile" : {
+      "type": "multiFile",
+      "layout": {
+        "type": "basic"
+      },
+      "base": "logs/",
+      "property": "categoryName",
+      "extension": ".log",
+      "maxLogSize": 2048000,
+      "backups": 5,
+      "compress": true
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": ["out"],
+      "level": "info"
+    }
+  }
+}

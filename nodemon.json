@@ -1,0 +1,18 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".idea/",
+    ".git/",
+    ".next/",
+    "logs/",
+    "node_modules/",
+    "node_modules/**/node_modules",
+    "public/",
+    "pages/"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node --inspect=3001  --throw-deprecation --trace-warnings"
+  },
+  "ext": "js,json,yaml"
+}
