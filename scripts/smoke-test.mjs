@@ -1,19 +1,11 @@
 import assert from 'node:assert/strict';
-import { once } from 'node:events';
 import { createAppServer } from '../server.js';
 
 const server = createAppServer();
-
-server.listen(0, '127.0.0.1');
-await once(server, 'listening');
-
-const address = server.address();
-
-if (!address || typeof address === 'string') {
-  throw new Error('Could not determine listening address.');
-}
-
-const baseUrl = `http://127.0.0.1:${address.port}`;
+const baseUrl = await server.listen({
+  host: '127.0.0.1',
+  port: 0,
+});
 
 try {
   const openApiResponse = await fetch(`${baseUrl}/api/openapi`);
@@ -61,6 +53,5 @@ try {
 
   console.log(`Smoke test passed using ${baseUrl}`);
 } finally {
-  server.close();
-  await once(server, 'close');
+  await server.close();
 }
